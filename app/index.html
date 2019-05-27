@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AngularJs App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="lib/fontawesome/font-awesome.min.css">
+  <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css" />
+  <!-- Views CSS-->
+  <link rel="stylesheet" href="views/login/login.css" />
+  <link rel="stylesheet" href="views/signup/signup.css" />
+  <link rel="stylesheet" href="views/dashboard/dashboard.css" />
+  <link rel="stylesheet" href="views/home/home.css" />
+  <link rel="stylesheet" href="views/editProfile/editProfile.css" />
+</head>
+<body>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="site-container" ng-view></div>
+
+  <script src="lib/jquery/jquery.min.js" /></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/ngStorage.min.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/bootstrap/bootstrap.bundle.min.js" /></script>
+  
+  <!-- Angular app -->
+  <script src="app.js"></script>
+  <!-- View Controllers -->
+  <script src="views/login/login.js"></script>
+  <script src="views/signup/signup.js"></script>
+  <script src="views/dashboard/dashboard.js"></script>
+  <script src="views/home/home.js"></script>
+  <script src="views/editProfile/editProfile.js"></script>
+</body>
+</html>

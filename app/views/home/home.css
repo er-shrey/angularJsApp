@@ -1,0 +1,54 @@
+#home.container{
+	height: 100%;
+	align-content: center;
+	background-image: url('../../resources/images/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Numans', sans-serif;
+	padding: 0;
+    width: 100%;
+	max-width: 100% !important;
+	min-width: 100% !important;
+}
+
+#home .card{
+	height: 80vh;
+	margin-bottom: auto;
+	width: 80%;
+	background-color: rgba(256,256,256,0.6) !important;
+	overflow: auto;
+}
+
+#home .card-header h3{
+	color: #000;
+}
+
+#home .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgb(59, 47, 85, 0.6);
+}
+
+#home .action-buttons{
+	height: 20px;
+    width: 40px;
+    font-size: 20px;
+    padding-left: 15px;
+	cursor: pointer;
+}
+
+#home .action-edit{
+	color: #257f25;
+}
+
+#home .action-delete{
+	color: #de2626;
+}
+
+#home .disable-action{
+	opacity: 0.2;
+	cursor: auto;
+}
+
+#home .highlight-user{
+	color: #de2626;
+	font-weight: 700;
+}

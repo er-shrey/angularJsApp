@@ -1,0 +1,79 @@
+<div id="edit" class="container">
+	<nav-menu page="'edit'" username="'Shrey'"></nav-menu>
+	<div class="d-flex justify-content-center">
+		<div class="card col-lg-6 col-xs-12">
+			<div class="card-header">
+				<h3>Update: <span class="profileName">{{editUser.email}}</span></h3>
+			</div>
+			<div class="card-body">
+				<form name="editForm">
+					<div class="col-lg-12 col-xs-12 input-group form-group">
+						<span class="input-group-lable">Contact</span>
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-phone"></i></span>
+						</div>
+						<input name="contact" type="text" class="form-control col-lg-6 col-xs-12" placeholder="Phone Number" ng-model="editUser.contact" ng-pattern="contactFormat">
+						<validate-field is-valid="!editForm.contact.$error.pattern && editUser.contact" tooltip="'Phone number should be min 10 and max 12 digit numbers only'" ng-show="editForm.contact.$touched"></validate-field>
+					</div>
+					<div class="col-lg-12 col-xs-12 input-group form-group">
+						<span class="input-group-lable">Gender</span>
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-venus-mars"></i></span>
+						</div>
+						<div class="radio-button-group">
+							<div class="col-sm-7 col-md-7">
+								<div class="input-group">
+									<div id="radioBtn" class="btn-group">
+										<a class="btn btn-sm btn-radio" ng-click="genderEvent('M')" data-toggle="gender" ng-class="gender.male">Male</a>
+										<a class="btn btn-sm btn-radio" ng-click="genderEvent('F')" data-toggle="gender" ng-class="gender.female">Female</a>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="col-lg-12 col-xs-12 input-group form-group">
+						<span class="input-group-lable">Age</span>
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-hourglass-half"></i></span>
+						</div>
+						<input name="age" type="text" class="form-control col-lg-6 col-xs-12" placeholder="Age" ng-model="editUser.age" ng-pattern="ageFormat">
+						<validate-field is-valid="!editForm.age.$error.pattern && editUser.age" tooltip="'Not a valid age'" ng-show="editForm.age.$touched"></validate-field>
+					</div>
+					<div class="col-lg-12 col-xs-12 input-group form-group">
+						<span class="input-group-lable">User Type</span>
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fa fa-users"></i></span>
+						</div>
+						<div class="dropdown input-group-append">
+							<select name="userType" class="form-control" ng-model="editUser.uType">
+								<option value="" disabled>User Type</option>
+								<option value="U">User</option>
+								<option value="A">Admin</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-lg-12 col-sm-12 float-left">
+						<input ng-disabled="(!editUser.contact || !editUser.age || !editUser.uType)" type="submit" value="Update" class="btn float-right update_btn" ng-click="updateUser()">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Updated Popup -->
+	<div class="modal fade" id="updateModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Profile Update</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>Profile Updated in the Database</span></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

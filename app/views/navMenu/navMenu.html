@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/#!/edit/{{username}}" ng-if="page=='home'">Edit Profile</a>
+				<a class="nav-link" href="/#!/home" ng-if="page=='edit'">Home</a>
+				<a class="nav-link" ng-if="page=='dashboard'">{{username}}</a>
+			</li>
+		</ul>
+	</div>
+	<div class="mx-auto order-0">
+		<a class="navbar-brand mx-auto" href="https://www.systango.com/" target="_blank">Systango</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</div>
+	<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/#!/dashboard" ng-if="page!='dashboard' && page!='signup'">Dashboard</a>
+				<a class="nav-link" href="/#!/home" ng-if="page=='dashboard'">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" style="cursor:pointer;" ng-if="page!='signup'" ng-click="logout()">Logout</a>
+				<a class="nav-link" style="cursor:pointer;" ng-if="page=='signup'" href="/#!/login">Login</a>
+			</li>
+		</ul>
+	</div>
+</nav>

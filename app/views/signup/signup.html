@@ -1,0 +1,166 @@
+<div id="signup" class="container">
+	<nav-menu page="'signup'" username="'none'"></nav-menu>
+    <div class="d-flex justify-content-center h-100">
+        <div class="card col-lg-10 col-sm-12">
+            <div class="card-header">
+                <h3>Sign Up</h3>
+            </div>
+            <div class="card-body">
+                <form name="signupForm">
+                    <div class="col-lg-6 col-md-6 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">First Name</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input name="firstName" class="form-control" ng-pattern="nameFormat" type="text" ng-model="signup.firstName" placeholder="First Name">
+                        <validate-field is-valid="!signupForm.firstName.$error.pattern && signup.firstName" tooltip="'First name should only contain alphabets'" ng-show="signupForm.firstName.$touched"></validate-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">Last Name</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input name="lastName" type="text" required ng-pattern="nameFormat" ng-model="signup.lastName" class="form-control" placeholder="Last Name">
+                        <validate-field is-valid="!signupForm.lastName.$error.pattern && signup.lastName" tooltip="'Last name should only contain alphabets'" ng-show="signupForm.lastName.$touched"></validate-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">Email</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        </div>
+                        <input name="email" type="text" ng-pattern="emailFormat" ng-model="signup.email" class="form-control" placeholder="Email">
+                        <validate-field is-valid="!signupForm.email.$error.pattern && signup.email && !emailExist.value" tooltip="emailExist.toolTip" ng-show="signupForm.email.$touched"></validate-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">Contact</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                        </div>
+                        <input name="contact" type="text" ng-pattern="contactFormat" ng-model="signup.contact" class="form-control" placeholder="Phone Number">
+                        <validate-field is-valid="!signupForm.contact.$error.pattern && signup.contact" tooltip="'Phone number should be min 10 and max 12 digit numbers only'" ng-show="signupForm.contact.$touched"></validate-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">Password</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-key"></i></span>
+                        </div>
+                        <input name="password" type="{{showPass}}" ng-pattern="passwordFormat" ng-model="signup.password" class="form-control" placeholder="Password">
+						<div class="input-group-append" ng-mousedown="showPass='text'" ng-mouseup="showPass='password'" ng-mouseleave="showPass='password'">
+							<span class="btn btn-light">
+								<i class="fa fa-eye"></i>
+							</span>
+						</div>
+						<div class="input-group-append" data-toggle="tooltip" data-placement="top" title="Must have at least one capital and one small letter, one special character, one number and minimum length of 8">
+							<span class="btn btn-info">
+								<i class="fa fa-question"></i>
+							</span>
+						</div>
+                        <validate-field is-valid="!signupForm.password.$error.pattern && signup.password" tooltip="'Not a valid password'" ng-show="signupForm.password.$touched"></validate-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">Confirm Password</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-key"></i></span>
+                        </div>
+                        <input name="confirmPassword" ng-model="confirmPassword" type="password" class="form-control" placeholder="Confirm Password">
+                        <validate-field is-valid="signup.password==confirmPassword && confirmPassword" tooltip="'Password not matching'" ng-show="signupForm.confirmPassword.$touched"></validate-field>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">Gender</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-venus-mars"></i></span>
+                        </div>
+                        <div class="radio-button-group">
+                            <div class="col-sm-7 col-md-7">
+                                <div class="input-group">
+                                    <div id="radioBtn" class="btn-group">
+                                        <a class="btn btn-sm btn-radio" ng-click="genderEvent('M')" ng-class="gender.male" data-toggle="gender">Male</a>
+                                        <a class="btn btn-sm btn-radio" ng-click="genderEvent('F')" ng-class="gender.female" data-toggle="gender">Female</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">Age</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-hourglass-half"></i></span>
+                        </div>
+                        <input name="age" type="text" ng-pattern="ageFormat" ng-model="signup.age" class="form-control" placeholder="Age">
+                        <validate-field is-valid="!signupForm.age.$error.pattern && signup.age" tooltip="'Not a valid age'" ng-show="signupForm.age.$touched"></validate-field>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12 input-group form-group">
+                        <span class="input-group-lable">User Type</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-users"></i></span>
+                        </div>
+                            <!--<button class="btn btn-dropdown dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example</button>-->
+                        <select name="userType" class="form-control" ng-model="signup.uType">
+                            <option value="" disabled selected>User Type</option>
+                            <option value="U">User</option>
+                            <option value="A">Admin</option>
+                        </select>
+                        <validate-field is-valid="signup.uType" tooltip="'Please select the value'" ng-show="signupForm.userType.$touched"></validate-field>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12 input-group form-group checkit">
+                        <input type="checkbox" ng-model="tncAccepted"><span ng-click="showTnC()" class="tncLink">Terms & Conditions</span>
+                    </div>
+                    <div class="form-group">
+                        <input ng-disabled="!signup.firstName || !signup.lastName || !signup.email || !signup.contact || !signup.password || !confirmPassword || !signup.age || !signup.uType || !tncAccepted" type="button" ng-click="signupUser()" value="Sign Up" class="btn float-right signup_btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+	<!-- Added user Popup -->
+	<div class="modal fade" id="successModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Added User</h4>
+					<button type="button" class="close" data-dismiss="modal" ng-click="goToLogin()">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>Congratulations, user has been created successfully. Please login to access application</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal" ng-click="clearAll()">Go To Login</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Already User Exist Popup -->
+	<div class="modal fade" id="userExistModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Alert</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>User Already exist, please select another username</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-warning" data-dismiss="modal">Ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Added user Popup -->
+	<div class="modal fade" id="tncModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Terms and Conditions</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

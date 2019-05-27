@@ -1,0 +1,122 @@
+#signup.container{
+	height: 100%;
+	align-content: center;
+	background-image: url('../../resources/images/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Numans', sans-serif;
+	padding: 0;
+    width: 100%;
+	max-width: 100% !important;
+	min-width: 100% !important;
+}
+
+#signup .card{
+	height: 510px;
+    margin-bottom: auto;
+	background-color: rgba(0,0,0,0.5) !important;
+}
+#signup .card-body{
+	overflow-y: auto;
+}
+#signup .form-group {
+    margin-bottom: 0.7rem;
+}
+
+#signup .card-header h3{
+	color: white;
+}
+
+#signup .input-group-prepend span{
+	width: 50px;
+	background-color: #FFC312;
+	color: black;
+	border:0 !important;
+}
+
+#signup input:focus{
+	outline: 0 0 0 0  !important;
+	box-shadow: 0 0 0 0 !important;
+}
+
+#signup .checkit{
+	color: white;
+}
+
+#signup .checkit input
+{
+	width: 20px;
+	height: 20px;
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+#signup .signup_btn{
+	color: black;
+	background-color: #FFC312;
+	width: 100px;
+}
+
+#signup .signup_btn:hover{
+	color: black;
+	background-color: white;
+}
+
+#signup .input-group-text{
+	font-size: 20px;
+}
+
+#signup .input-group{
+	float: left;
+}
+
+#signup .input-group-lable{
+	float: left;
+	width: 100%;
+	color: #fff;
+}
+
+#signup #radioBtn .notActive{
+    color: #3276b1;
+    background-color: #fff;
+}
+#signup .radio-button-group{
+	cursor: pointer;
+}
+
+#signup .btn-radio{
+	width: 70px;
+    height: 38px;
+    padding: 8px;
+}
+
+#signup .btn-radio.active{
+	color: #fff;
+    background-color: #ffc312;
+    border-color: #ffc312;
+}
+#signup .btn-radio.notActive{
+	color: #49505;
+}
+
+#signup .dropdown .btn:focus{
+	outline: 0;
+    box-shadow: none;
+}
+
+#signup .dropdown .btn-dropdown{
+	color: #49505;
+    background-color: #fff;
+    border-color: #fff;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#signup .dropdown-menu.show {
+    display: block;
+    text-align: center;
+    width: -webkit-fill-available;
+    border-radius: 0;
+}
+#signup .tncLink{
+	cursor: pointer;
+}

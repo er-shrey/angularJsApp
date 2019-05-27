@@ -1,0 +1,79 @@
+#dashboard.container{
+	height: 100%;
+	align-content: center;
+	background-image: url('../../resources/images/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Numans', sans-serif;
+	padding: 0;
+    width: 100%;
+	max-width: 100% !important;
+	min-width: 100% !important;
+}
+
+#dashboard .card{
+	height: 80vh;
+	margin-bottom: auto;
+	background-color: rgba(256,256,256,0.6) !important;
+	overflow: auto;
+}
+
+#dashboard .card-header h3{
+	color: #000;
+}
+
+#dashboard .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: rgb(59, 47, 85, 0.6);
+}
+
+#dashboard .filters{
+	
+}
+
+#dashboard .input-group{
+	float: left;
+}
+
+#dashboard .input-group-lable{
+	float: left;
+	width: 100%;
+	color: #fff;
+}
+
+#dashboard .input-group-prepend span{
+	width: 50px;
+	background-color: #FFC312;
+	color: black;
+	border:0 !important;
+}
+
+#dashboard .dropdown .btn:focus{
+	outline: 0;
+    box-shadow: none;
+}
+
+#dashboard .dropdown .btn-dropdown{
+	color: #49505;
+    background-color: #fff;
+    border-color: #fff;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#dashboard .dropdown-menu.show {
+    display: block;
+    text-align: center;
+    width: -webkit-fill-available;
+    border-radius: 0;
+}
+
+#dashboard .filters{
+	flex: none;
+	margin-top: 15px;
+    float: left;
+}
+
+#dashboard .update_btn{
+	color: black;
+	background-color: #FFC312;
+	width: 100px;
+}
